@@ -1,0 +1,153 @@
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: PoppinsBold;
+    src: url(fonts/Poppins-Bold.ttf);
+    font-weight: bold;
+}
+
+body {
+    background-color: #222222;
+}
+
+
+/* I don't quite know how to make everything work on mobile... I know I can
+ use % and use the meta element, but I don't have in-depth knowledge on this 
+ stuff quite yet...*/
+
+
+/* Actually, just learned that I could use the em and rem attributes as well... */
+
+.sideBorders {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 60px;
+}
+
+.contact {
+    text-align: right;
+    font-family: PoppinsBold;
+    font-size: 20px;
+    padding-top: 1%;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #DEBF79;
+    margin-right: 170px;
+}
+
+#logo {
+    float: left;
+    margin-left: 10%;
+    position: absolute;
+}
+
+.container {
+    margin-top: 90px;
+    text-align: center;
+    margin-left: 9.5%;
+    float: left;
+}
+
+.column {
+    background-color: white;
+    float: left;
+    width: 400px;
+    height: 420px;
+    margin-left: 25px;
+    border-radius: 3px;
+}
+
+.content {
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+h2 {
+    color: black;
+    font-family: PoppinsBold;
+    text-align: left;
+    font-size: 38px;
+    margin-bottom: 0px;
+}
+
+p {
+    font-family: Poppins;
+    text-align: left;
+}
+
+.column p {
+    font-size: 14px;
+    color: #858585;
+    word-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+img[src*="Rabbit"] {
+    margin-top: 40px;
+}
+
+.learnmore {
+    text-decoration: none;
+    color: white;
+    font-family: Poppins;
+    background-color: #DEBF79;
+    font-size: 14px;
+    padding: 13px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.learnmore:hover {
+    background-color: black;
+    transition: 450ms ease-out;
+    cursor: pointer;
+}
+
+.learnmore:active {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: solid 1px black;
+    transition: 0ms;
+}
+
+.learnmore::selection {
+    user-select: none;
+}
+
+.container2 {
+    clear: both;
+    margin-left: 180px;
+    margin-right: 180px;
+    margin-top: 570px;
+}
+
+h1 {
+    font-family: PoppinsBold;
+    color: white;
+    font-size: 50px;
+    display: inline;
+}
+
+.underline {
+    border-bottom: solid #DEBF79 5px;
+}
+
+.container2 p {
+    color: white;
+    margin-top: 35px;
+}
+
+.container2 p a {
+    color: #DEBF79;
+    text-decoration: none;
+}
+
+#list {
+    margin-top: 0px;
+}

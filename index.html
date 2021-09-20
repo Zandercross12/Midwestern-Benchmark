@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript">
+        // These functions are for the names at the bottom of the page.
+        function noDuplicates(value, index, self) {
+            return self.indexOf(value) == index;
+        }
+
+        function myFunction() {
+
+            if (document.getElementById("alreadyList")) {
+                alert('Link has already been activated.');
+                return;
+            }
+
+            // Not too familiar with Java so had to look some of this stuff up unfortunately.
+            // Tried learning a bit about hashtables and stuff, but I was short on time.
+
+            const names1 = ["Matt Johnson", "Bart Paden", "Ryan Doss", "Jared Malcolm"];
+            const names2 = ["Matt Johnson", "Bart Paden", "Jordan Heigle", "Tyler Viles"];
+            let both = names1.concat(names2);
+
+            both = both.filter(noDuplicates);
+
+            var ul = document.createElement('ul');
+            ul.setAttribute("id", "alreadyList");
+
+            both.forEach(function(name) {
+
+                var li = document.createElement('li');
+                li.textContent = name;
+                ul.appendChild(li);
+
+            });
+
+            var list = document.getElementById("list");
+            list.appendChild(ul);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="sideBorders">
+        <div id="logo">
+            <img src="assets/Logo.png">
+        </div>
+
+        <div class="contact">
+            <a href="contact/contact.html">
+                    contact
+                </a>
+        </div>
+
+        <div class="container">
+            <div class="column">
+                <div class="content">
+                    <img src="assets/topics/Talkie.png">
+                    <h2>Heading Two</h2>
+                    <p>Integer accumsan molestie nisl, id faucibus urna accumsan quis. Proin vulputate, mauris semper maximus.</p>
+                    <a class="learnmore">Learn More</a>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <img src="assets/topics/Rabbit.png">
+                    <h2>Heading Two</h2>
+                    <p>Lorem ipsum dolor set amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                    <a class="learnmore">Learn More</a>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="content">
+                    <img src="assets/topics/Shield.png">
+                    <h2>Heading Two</h2>
+                    <p>Lorem ipsum dolor set amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                    <a class="learnmore">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container2">
+            <h1 class="underline">Heading </h1>
+            <h1> One</h1>
+
+            <p>Remove the duplicates in 2 Javascript objects and output the list of distinct names in an unordered list when <a href="javascript:void(0)" onclick="myFunction();" id="names">this link</a> is clicked. If the operation has been completed already
+                notify the user that this has already been done.</p>
+            <br>
+            <p id="list"></p>
+            <!-- Don't really know a better way to place the list at the bottom so... -->
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

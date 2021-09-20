@@ -1,0 +1,114 @@
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: PoppinsBold;
+    src: url(fonts/Poppins-Bold.ttf);
+    font-weight: bold;
+}
+
+
+/* Pretty sure I need to use javascript for the red email Required and
+ the borders... but I haven't learned much about Javascript yet 
+ */
+
+#firstname,
+#lastname,
+#title,
+#email {
+    background-color: #F5F5F5;
+    border: none;
+    font-size: 15px;
+    font-family: Poppins;
+    width: 40%;
+    height: 50px;
+    padding-left: 25px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+textarea {
+    resize: none;
+    background-color: #F5F5F5;
+    border: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    font-size: 15px;
+    font-family: Poppins;
+}
+
+#submit {
+    background-color: #DEBF79;
+    border: none;
+    font-size: 13px;
+    font-family: Poppins;
+    color: white;
+    padding: 13px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 36.5%;
+}
+
+body {
+    background: linear-gradient(90deg, #222222 50%, white 50%);
+    font-family: Poppins;
+}
+
+.sideBorders {
+    margin-left: 150px;
+    margin-right: 40px;
+    margin-top: 60px;
+}
+
+.home {
+    text-align: right;
+    font-family: PoppinsBold;
+    font-size: 20px;
+    padding-top: 1%;
+}
+
+.home a {
+    text-decoration: none;
+    color: #DEBF79;
+    margin-right: 170px;
+}
+
+#logo {
+    float: left;
+    margin-left: 10%;
+    position: absolute;
+}
+
+h1 {
+    font-family: PoppinsBold;
+    color: white;
+    font-size: 50px;
+    display: inline;
+}
+
+.underline {
+    border-bottom: solid #DEBF79 5px;
+}
+
+.contentleft {
+    float: left;
+    margin-top: 13%;
+    margin-left: 11%;
+    margin-right: 62%;
+}
+
+p {
+    color: white;
+}
+
+.contentright {
+    font-family: PoppinsBold;
+    position: absolute;
+    margin-left: 47%;
+    margin-top: 6%;
+    font-size: 25px;
+    width: 34%;
+}
