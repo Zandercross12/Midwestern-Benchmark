@@ -4,43 +4,15 @@
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="css/index.css">
-    <script type="text/javascript">
-        // These functions are for the names at the bottom of the page.
-        function noDuplicates(value, index, self) {
-            return self.indexOf(value) == index;
-        }
+    <script src="javascript/javascript.js" type="text/javascript">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
 
-        function myFunction() {
-
-            if (document.getElementById("alreadyList")) {
-                alert('Link has already been activated.');
-                return;
-            }
-
-            // Not too familiar with Java so had to look some of this stuff up unfortunately.
-            // Tried learning a bit about hashtables and stuff, but I was short on time.
-
-            const names1 = ["Matt Johnson", "Bart Paden", "Ryan Doss", "Jared Malcolm"];
-            const names2 = ["Matt Johnson", "Bart Paden", "Jordan Heigle", "Tyler Viles"];
-            let both = names1.concat(names2);
-
-            both = both.filter(noDuplicates);
-
-            var ul = document.createElement('ul');
-            ul.setAttribute("id", "alreadyList");
-
-            both.forEach(function(name) {
-
-                var li = document.createElement('li');
-                li.textContent = name;
-                ul.appendChild(li);
-
-            });
-
-            var list = document.getElementById("list");
-            list.appendChild(ul);
-
-        }
+    <script>
+        $.getJSON('https://api.mwi.dev/content/home', function(data) {
+            console.log(data);
+        });
     </script>
 </head>
 
@@ -89,7 +61,7 @@
             <h1 class="underline">Heading </h1>
             <h1> One</h1>
 
-            <p>Remove the duplicates in 2 Javascript objects and output the list of distinct names in an unordered list when <a href="javascript:void(0)" onclick="myFunction();" id="names">this link</a> is clicked. If the operation has been completed already
+            <p>Remove the duplicates in 2 Javascript objects and output the list of distinct names in an unordered list when <a href="javascript:void(0)" onclick="myFunction()" id="names">this link</a> is clicked. If the operation has been completed already
                 notify the user that this has already been done.</p>
             <br>
             <p id="list"></p>
