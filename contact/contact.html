@@ -8,9 +8,31 @@
     </script>
 
     <script>
-        $.getJSON('https://api.mwi.dev/content/contact', function(data) {
+        const apiURL = "https://api.mwi.dev/content/contact";
+
+        $.getJSON(apiURL, function(data) {
             console.log(data);
         });
+
+        async function fetchURL(url) {
+            const response = await fetch(url);
+
+            var data = await response.json();
+
+            if (response) {
+
+                const headingONE = JSON.stringify(data.data[0].content);
+
+                const headingSlice = headingONE.slice(1, 134);
+                const headingSlice2 = headingONE.slice(135, 135 + 103);
+
+                document.getElementById("headingONE").innerHTML = headingSlice;
+                document.getElementById("headingONE2").innerHTML = headingSlice2;
+            }
+
+        }
+
+        fetchURL(apiURL);
     </script>
 </head>
 
@@ -30,7 +52,8 @@
         <div class="contentleft">
             <h1 class="underline">Heading </h1>
             <h1> One</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do dos euismod tempor incididunt ut labore et trace dolore magna aliqua.<br><br>Proin sagittis nisl rhoncus mattis rhoncus. At augue eget arcu dictum varius duis at consectetur lorem.</p>
+            <p id="headingONE">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do dos eiusmod tempor incididunt ut labore et trace dolore magna aliqua.</p>
+            <p id="headingONE2">Proin sagittis nisl rhoncus mattis rhoncus. At augue eget arcu dictum varius duis at consectetur lorem.</p>
         </div>
 
         <div class="contentright">

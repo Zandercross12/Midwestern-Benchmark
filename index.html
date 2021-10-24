@@ -10,9 +10,30 @@
     </script>
 
     <script>
-        $.getJSON('https://api.mwi.dev/content/home', function(data) {
+        const apiURL = "https://api.mwi.dev/content/home";
+
+        $.getJSON(apiURL, function(data) {
             console.log(data);
         });
+        // Guess I don't particularly need Jquery for just pulling .json code from an API.
+        async function fetchAPI(url) {
+            const response = await fetch(url);
+
+            var data = await response.json();
+
+            if (response) {
+                const talkieText = data.data[0].content;
+                const rabbitText = data.data[1].content;
+                const shieldText = data.data[2].content;
+
+                document.getElementById("talkieText").innerHTML = talkieText;
+                document.getElementById("rabbitText").innerHTML = rabbitText;
+                document.getElementById("shieldText").innerHTML = shieldText;
+
+            }
+        }
+
+        fetchAPI(apiURL);
     </script>
 </head>
 
@@ -33,7 +54,7 @@
                 <div class="content">
                     <img src="assets/topics/Talkie.png">
                     <h2>Heading Two</h2>
-                    <p>Integer accumsan molestie nisl, id faucibus urna accumsan quis. Proin vulputate, mauris semper maximus.</p>
+                    <p id="talkieText">Integer accumsan molestie nisl, id faucibus urna accumsan quis. Proin vulputate, mauris semper maximus.</p>
                     <a class="learnmore">Learn More</a>
                 </div>
             </div>
@@ -42,7 +63,7 @@
                 <div class="content">
                     <img src="assets/topics/Rabbit.png">
                     <h2>Heading Two</h2>
-                    <p>Lorem ipsum dolor set amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                    <p id="rabbitText">Lorem ipsum dolor set amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
                     <a class="learnmore">Learn More</a>
                 </div>
             </div>
@@ -51,7 +72,7 @@
                 <div class="content">
                     <img src="assets/topics/Shield.png">
                     <h2>Heading Two</h2>
-                    <p>Lorem ipsum dolor set amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                    <p id="shieldText">Lorem ipsum dolor set amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
                     <a class="learnmore">Learn More</a>
                 </div>
             </div>
