@@ -32,5 +32,4 @@ function myFunction() {
 
     var list = document.getElementById("list");
     list.appendChild(ul);
-
 }
